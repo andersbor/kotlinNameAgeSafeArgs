@@ -46,10 +46,12 @@ class FirstFragment : Fragment() {
             }
             val age = ageStr.toInt()
 
+            val person = Person(name, age)
+
             //findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
             // Update BOTH build.gradle files
             // FirstFragmentDirections is an automatically generated class
-            val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment(name, age)
+            val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment(name, age, person)
             findNavController().navigate(action)
         }
 

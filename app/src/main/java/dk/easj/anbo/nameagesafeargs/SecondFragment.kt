@@ -36,6 +36,7 @@ class SecondFragment : Fragment() {
 
         binding.nameTextView.text = "Hello " + args.personname
         binding.ageTextView.text = "Only " + args.age + " + years old ..."
+        binding.personTextView.text = "Person object " + args.person
 
         binding.buttonSecond.setOnClickListener {
             findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
