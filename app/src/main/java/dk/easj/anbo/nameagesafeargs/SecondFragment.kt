@@ -9,33 +9,24 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import dk.easj.anbo.nameagesafeargs.databinding.FragmentSecondBinding
 
-/**
- * A simple [Fragment] subclass as the second destination in the navigation.
- */
 class SecondFragment : Fragment() {
-
     private var _binding: FragmentSecondBinding? = null
     private val args: SecondFragmentArgs by navArgs()
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
         _binding = FragmentSecondBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         binding.nameTextView.text = "Hello " + args.personname
-        binding.ageTextView.text = "Only " + args.age + " + years old ..."
+        binding.ageTextView.text = "Only " + args.age + " years old ..."
         binding.personTextView.text = "Person object " + args.person
 
         binding.buttonSecond.setOnClickListener {
